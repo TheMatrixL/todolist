@@ -5,9 +5,18 @@ html {
   font-family: 'helvetica neue';
 }
 
-h1 {
+h1, h2 {
   color: #fff;
   padding: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+h4 {
+  color: #000000;
+  padding: 5px;
+  text-align: center;
+  margin: 0px;
 }
 
 .box {
@@ -18,9 +27,14 @@ h1 {
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
+.bodycontent{
+  margin-top: 5px;
+}
+
 #heading {
   background-color: #14C38E;
   text-align: center;
+  margin-bottom: 5px;
 }
 
 .item {
