@@ -26,15 +26,15 @@ const itemSchema = new mongoose.Schema({ //create itemSchema
 const Item = mongoose.model("Item", itemSchema);
 
 const item1 = new Item({
-  name: "This is item1",
+  name: "Hit the button to add more!",
 });
 
 const item2 = new Item({
-  name: "Hit the button to add more",
+  name: "Tick the box to delete items",
 });
 
 const item3 = new Item({
-  name: "Tick the box to delete",
+  name: "Create new custom list by adding new list name on the end of url",
 });
 
 const defaultItems = [item1, item2, item3]; //in oder to insert many items
@@ -66,7 +66,7 @@ app.get('/', function(req, res) {
       res.redirect('/');
     } else {
       res.render('list', {
-        listTitle: "TO DO LIST",
+        listTitle: "ToDoList",
         listDate: day,
         newListItems: foundItems
       })
@@ -127,7 +127,7 @@ app.post("/", function(req, res) {
     name: itemName
   });
 
-  if (listName === "TO DO LIST") {
+  if (listName === "ToDoList") {
     item.save()
     res.redirect("/");
   } else {
@@ -144,7 +144,7 @@ app.post("/delete", function(req, res) {
   const listName = req.body.listName;
   const itemName = req.body.itemName;
 
-  if (listName === "TO DO LIST") {
+  if (listName === "ToDoList") {
 
     Item.findByIdAndRemove(checkedItemId, function(err) {
       if (err) {
