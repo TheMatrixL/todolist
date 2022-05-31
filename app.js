@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const date = require(__dirname + '/date.js');
 require('dotenv').config('/.env');
 
-
 const app = express();
 
 app.set('view engine', 'ejs');
