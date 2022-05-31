@@ -2,8 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const date = require(__dirname + '/date.js');
-require('dotenv').config({path:__dirname+'/.env');
-
+require('dotenv').config('/.env');
 
 
 const app = express();
@@ -67,7 +66,7 @@ app.get('/', function(req, res) {
       res.redirect('/');
     } else {
       res.render('list', {
-        listTitle: "HOME",
+        listTitle: "TO DO LIST",
         listDate: day,
         newListItems: foundItems
       })
@@ -128,7 +127,7 @@ app.post("/", function(req, res) {
     name: itemName
   });
 
-  if (listName === "HOME") {
+  if (listName === "TO DO LIST") {
     item.save()
     res.redirect("/");
   } else {
@@ -145,7 +144,7 @@ app.post("/delete", function(req, res) {
   const listName = req.body.listName;
   const itemName = req.body.itemName;
 
-  if (listName === "HOME") {
+  if (listName === "TO DO LIST") {
 
     Item.findByIdAndRemove(checkedItemId, function(err) {
       if (err) {
