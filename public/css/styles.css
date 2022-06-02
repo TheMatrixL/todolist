@@ -59,7 +59,7 @@ input:checked+p {
 
 input[type="checkbox"] {
   margin: 20px;
-  flex: 0;
+  flex: 0 0 auto;
   transform: scale(1.5);
 }
 
@@ -79,7 +79,7 @@ form.item {
 button {
   min-height: 50px;
   width: 50px;
-  border-radius: 50%;
+  border-radius: 12px;
   border-color: transparent;
   background-color: #14C38E;
   color: #fff;
